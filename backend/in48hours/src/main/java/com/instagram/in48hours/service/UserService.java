@@ -10,11 +10,11 @@ import com.instagram.in48hours.model.User;
 @Component
 public class UserService {
 	
-private static List<User> users = new ArrayList<>();
-static {
-	users.add(new User(0, "Tuấn Đạt", "1234", "####", "handsome", "male"));
-}
-public List<User>findAll(){
-	return users;
-}
+//private static List<User> users = new ArrayList<>();
+//static {
+//	users.add(new User(0, "Tuấn Đạt", "1234", "####", "handsome", "male"));
+//}
+//public List<User>findAll(){
+//	return users;
+//}
 }

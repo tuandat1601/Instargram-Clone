@@ -18,14 +18,14 @@ public class UserController {
 		super();
 		this.userService = userService;
 	}
-
-@RequestMapping(method = RequestMethod.GET,path = "/hello")
+@RequestMapping(method = RequestMethod.GET,path = "/")
  public String Hello() {
 	 return "Hello Đạt";
  }
-@GetMapping("/users")
-public List<User> retrieveAllUsers(){
-	return userService.findAll();
-}
+
+//@GetMapping("/users")
+//public List<User> retrieveAllUsers(){
+//	return userService.findAll();
+//}
 
 }
