@@ -9,7 +9,7 @@ type Product ={
 })
 
 export class HomeComponent {
-  
+  listOfString :string [] = ["ngoc", "dat"]
  products:Product[] = [
   {
     name:"hi",

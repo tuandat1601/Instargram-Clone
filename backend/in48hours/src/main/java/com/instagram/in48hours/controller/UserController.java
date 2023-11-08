@@ -18,9 +18,17 @@ public class UserController {
 		super();
 		this.userService = userService;
 	}
-@RequestMapping(method = RequestMethod.GET,path = "/")
+ @GetMapping("/hello")
  public String Hello() {
 	 return "Hello Đạt";
+ }
+ @GetMapping("/con")
+ public String Con() {
+	 return "Cặc";
+ }
+ @GetMapping("/lon")
+ public String Lon() {
+	 return "Lon";
  }
 
 //@GetMapping("/users")

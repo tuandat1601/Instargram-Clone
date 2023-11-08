@@ -42,7 +42,7 @@ public class User implements UserDetails {
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	    private Set<Comment> comments;
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	    private Set<Like> likes;
+	    private Set<Likes> likes;
 	 @OneToMany(mappedBy = "follower", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	 private Set<Follow> followers;
 

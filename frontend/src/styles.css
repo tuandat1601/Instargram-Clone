@@ -14,3 +14,8 @@ html, body {
     min-height: 100vh;
     font-size: 100%;
 }
+.home{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

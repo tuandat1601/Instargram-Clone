@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "like")
-public class Like {
+@Entity(name = "likes")
+public class Likes {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
