@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.instagram.in48hours.model.User;
-import com.instagram.in48hours.service.UserService;
+import com.instagram.in48hours.service.impl.UserServiceIml;
 @RestController
 public class UserController {
-	private UserService userService;
+	private UserServiceIml userService;
 	
- public UserController(UserService userService) {
+ public UserController(UserServiceIml userService) {
 		super();
 		this.userService = userService;
 	}

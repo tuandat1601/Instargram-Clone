@@ -12,6 +12,7 @@ import { MessagesComponent } from './components/pages/messages/messages.componen
 import { CreateComponent } from './components/pages/create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ReelsComponent } from './components/pages/reels/reels.component';
+import { PostsComponent } from './components/layouts/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReelsComponent } from './components/pages/reels/reels.component';
     NotificationsComponent,
     MessagesComponent,
     CreateComponent,
-    ReelsComponent
+    ReelsComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

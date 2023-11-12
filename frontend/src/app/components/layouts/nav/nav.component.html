@@ -54,7 +54,8 @@
                     <span class="pl-4"
                         [ngClass]="{font700:currentPath==='/',displaynone:navbarStatus=='navbar-small'}">Home</span>
                 </a></li>
-            <li [ngClass]="{align__justify__center:navbarStatus==='navbar-small'}"><button #searchname data-name="search" (click)="logData(searchname.getAttribute('data-name'))"
+            <li [ngClass]="{align__justify__center:navbarStatus==='navbar-small'}">
+                <button #searchname data-name="search" (click)="logData(searchname.getAttribute('data-name'))"
                     class="flex items-center lg:p-3 ">
                     <div>
                         <svg aria-label="Search"
@@ -84,7 +85,10 @@
                     <span class="pl-4"
                         [ngClass]="{font700: navtool==='search',displaynone:navbarStatus=='navbar-small'}">
                         Search</span>
-                </button></li>
+                </button>
+              
+                <app-search *ngIf="navtool ==='search' "></app-search>
+            </li>
             <li [ngClass]="{align__justify__center:navbarStatus==='navbar-small'}"><a routerLink="/explore" class="flex items-center lg:p-3 " #explorename data-name="/explore"
                     (click)="logData(explorename.getAttribute('data-name'))">
                     <div>
