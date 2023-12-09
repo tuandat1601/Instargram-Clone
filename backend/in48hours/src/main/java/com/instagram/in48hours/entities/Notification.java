@@ -1,4 +1,4 @@
-package com.instagram.in48hours.model;
+package com.instagram.in48hours.entities;
 
 import java.sql.Timestamp;
 
@@ -20,9 +20,7 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity(name = "notification")
 public class Notification {
 	@Id
@@ -31,7 +29,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user; // User who receives the notification
+    private Users user; // User who receives the notification
 
     @Enumerated(EnumType.STRING)
  
@@ -39,7 +37,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "source_user_id")
-    private User sourceUser; // User who triggered the notification (e.g., liked, commented, followed)
+    private Users sourceUser; // User who triggered the notification (e.g., liked, commented, followed)
 
     @ManyToOne
     @JoinColumn(name = "post_id")

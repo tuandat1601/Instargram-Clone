@@ -1,4 +1,4 @@
-package com.instagram.in48hours.model;
+package com.instagram.in48hours.entities;
 
 import java.sql.Timestamp;
 
@@ -14,9 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity(name = "comment")
 public class Comment {
 	@Id
@@ -30,7 +28,7 @@ public class Comment {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User user;
+	private Users user;
 	
 	private Timestamp timestamp;
 }

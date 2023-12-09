@@ -1,12 +1,14 @@
 package com.instagram.in48hours.config;
 
-import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,8 +23,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.instagram.in48hours.service.UserService;
-import com.instagram.in48hours.service.impl.UserServiceIml;
+import com.instagram.in48hours.service.user.UserService;
 
 import lombok.RequiredArgsConstructor;
 @Configuration
@@ -33,15 +34,28 @@ public class SecurityConfig {
 	@Autowired
 	private JWTAuthenticationFilter authenticationFilter;
 	
-	 @Bean
-	    public UserDetailsService userDetailsService() { 
-	        return new UserServiceIml(); 
-	    } 
+	
 	 private static final String[] WHITE_LIST_URL = {
-		
-			 "/api/v1/welcome/**"
+	
+			 "/api/v1/welcome/**",
+			 "/api/v1/auth/**",
+			
+			 "/swagger-ui/**",
+			 "/swagger-resources/**",
+			 "/swagger-ui.html",
+			 "/v3/api-docs/**",
+"/hello/**"
 			
 	 };
+	
+	 
+	 @Autowired
+	 private UserService userService;
+	 @Bean
+	    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception { 
+	        return config.getAuthenticationManager(); 
+	    } 
+	 
 	 @Bean
 	 public UserDetailsService userDetailsService(PasswordEncoder encoder) {
 	        UserDetails admin = User.withUsername("hach")
@@ -78,7 +92,7 @@ public class SecurityConfig {
      @Bean
      public AuthenticationProvider authenticationProvider() { 
          DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(); 
-         authenticationProvider.setUserDetailsService(userDetailsService()); 
+         authenticationProvider.setUserDetailsService(userService.userDetailsService()); 
          authenticationProvider.setPasswordEncoder(passwordEncoder()); 
          return authenticationProvider; 
      } 

@@ -1,4 +1,4 @@
-package com.instagram.in48hours.model;
+package com.instagram.in48hours.entities;
 
 import java.sql.Timestamp;
 
@@ -14,22 +14,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity(name = "post")
-public class Post {
+
+@Entity(name = "follow")
+public class Follow {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-	private String caption;
-private String image;
-	
-	private int comments;
-
-	private int likes;
-	private Timestamp timestamp;
 	@ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "follower_id")
+    private Users follower; // User who is following
+
+    @ManyToOne
+    @JoinColumn(name = "following_id")
+    private Users following; // User who is being followed
+
+
+    private Timestamp timestamp;
 }

@@ -19,7 +19,6 @@ export class NavComponent {
   navbarStatus=""
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
-    // Check if the click event target is not the button
     if (!(event.target as HTMLElement).matches('button')) {
       this.sut.padding = '0px';
       this.clickMessage = '';
@@ -29,11 +28,9 @@ export class NavComponent {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // You can access the current path here
         this.currentPath = event.url;
         this.navtool = ''
-        // console.log('Current Path:', this.currentPath);
-        // console.log('Current navtool:', this.navtool);
+   
         if (event.url !== "/messages" ){
           this.navbarStatus="navbar-big"
         }else{
@@ -56,21 +53,7 @@ export class NavComponent {
     }
   }
   onClickChange() {
-
-
-    // if (this.svg_line.display === 'block' && this.svg_weight.display==='none') {
-    //   console.log("hiii")
-    //   this.svg_line.display = 'none';
-    //   this.svg_weight.display='block';
-    // } else if (this.svg_line.display === 'none' && this.svg_weight.display ==='block'){
-    //   console.log("haaa")
-    //   this.svg_line.display = 'block';
-    //   this.svg_weight.display='none';
-    // }
   }
-  // onChangeName(event:any){
-  //   this.name=event.target.value
-  // }
 
   logData(data: string | null) {
  

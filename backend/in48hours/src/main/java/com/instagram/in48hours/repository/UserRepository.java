@@ -4,8 +4,10 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.instagram.in48hours.model.User;
+import com.instagram.in48hours.entities.Users;
 
-public interface UserRepository extends JpaRepository<User, Long>{
-	   Optional<User> findByName(String username); 
+public interface UserRepository extends JpaRepository<Users, Long>{
+	Optional <Users> findByUserName(String username); 
+	   Optional<Users> findByEmail(String email); 
+	   
 }
