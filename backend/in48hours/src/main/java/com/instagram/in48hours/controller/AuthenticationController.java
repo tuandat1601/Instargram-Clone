@@ -14,12 +14,14 @@ import com.instagram.in48hours.dto.SignUpRequest;
 import com.instagram.in48hours.entities.Users;
 import com.instagram.in48hours.service.AuthenticationService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 @CrossOrigin( origins = "*")
+@Tag(name = "Authentication")
 public class AuthenticationController {
 	@Autowired
 private AuthenticationService authenticationService;

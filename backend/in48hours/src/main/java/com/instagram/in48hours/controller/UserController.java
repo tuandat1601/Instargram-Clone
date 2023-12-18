@@ -18,12 +18,16 @@ import com.instagram.in48hours.entities.Users;
 import com.instagram.in48hours.service.impl.user.UserServiceIml;
 import com.instagram.in48hours.service.user.UserService;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/v1/user")
 @SecurityRequirement(name="bearerAuth")
 @CrossOrigin( origins = "*")
+@Tag(name = "User")
 public class UserController {
 	private UserService userService;
 	

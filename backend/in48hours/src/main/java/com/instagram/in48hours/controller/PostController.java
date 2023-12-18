@@ -10,10 +10,13 @@ import com.instagram.in48hours.entities.Post;
 import com.instagram.in48hours.repository.PostRepository;
 import com.instagram.in48hours.service.post.PostService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/post")
+@Tag(name = "Posts")
 public class PostController {
 	
 	@Autowired
