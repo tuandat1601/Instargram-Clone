@@ -1,9 +1,10 @@
 package com.instagram.in48hours.service.post;
 
-import java.util.List;
 
-import com.instagram.in48hours.entities.Post;
+import org.springframework.stereotype.Service;
 
-public interface PostService {
- List<Post> getListPost();
+import com.instagram.in48hours.service.GenericService;
+@Service
+public interface PostService extends GenericService{
+
 }

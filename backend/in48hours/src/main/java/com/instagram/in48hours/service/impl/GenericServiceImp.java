@@ -74,7 +74,7 @@ public class GenericServiceImp implements GenericService {
 
 	@Override
 	public <T> T create(JpaRepository<T, Long> repository, T entity, Predicate<T> condition) {
-		 if (condition.test(entity)) {
+		 if (condition != null&&condition.test(entity)) {
 	            throw new EntityExistsException("Entity already exists with the given condition.");
 	        }
 

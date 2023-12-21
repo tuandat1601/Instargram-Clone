@@ -8,12 +8,15 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  name = ""
+  name :string
   navtool = ""
   clickMessage = '';
   sut = {
     "padding": "0"
   };
+
+  
+  
   currentPath = ""
   emtyPath = ""
   navbarStatus=""
@@ -25,7 +28,7 @@ export class NavComponent {
     }
   }
   constructor(private router: Router) {
-
+    this.name=""
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentPath = event.url;
