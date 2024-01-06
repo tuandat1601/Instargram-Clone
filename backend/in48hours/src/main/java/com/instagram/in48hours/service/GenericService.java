@@ -12,7 +12,7 @@ import com.instagram.in48hours.entities.Post;
 public interface GenericService {
 
 	<T> List<T> getAll(JpaRepository<T, Long> repository) ;
-	<T> T create(JpaRepository<T, Long> repository, T entity, Predicate<T> condition);
+	<T,U> T create(JpaRepository<T, Long> repository, T entity, U type);
    <T> Optional<T> getById(JpaRepository<T, Long> repository, Long id); 
   
    <T> T update(JpaRepository<T, Long> repository, T entity);

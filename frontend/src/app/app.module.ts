@@ -12,8 +12,11 @@ import { MessagesComponent } from './components/pages/messages/messages.componen
 import { CreateComponent } from './components/pages/create/create.component';
 import { FormsModule } from '@angular/forms';
 import { ReelsComponent } from './components/pages/reels/reels.component';
-import { PostsComponent } from './components/layouts/posts/posts.component';
+import { PostsComponent } from './components/pages/home/posts/posts.component';
 import { SearchComponent } from './components/layouts/search/search.component';
+
+import { SuggestedComponent } from './components/pages/home/suggested/suggested.component';
+import { PostComponent } from './components/pages/home/posts/post/post.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { SearchComponent } from './components/layouts/search/search.component';
     MessagesComponent,
     CreateComponent,
     ReelsComponent,
-    PostsComponent
+    PostsComponent,
+    SuggestedComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
