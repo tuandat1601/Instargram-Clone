@@ -2,8 +2,8 @@
 
     <p >posts works!</p>
     <div class="show-post">
-        <div class="list-post relative flex justify-center">
-            <app-post class="w-2/3"></app-post>
+        <div class="list-post relative flex items-center flex-col">
+            <app-post  *ngFor="let post of listPost" [post]="post" class="w-2/3 "></app-post>
         </div>
     </div>
 </div>

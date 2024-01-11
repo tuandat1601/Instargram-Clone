@@ -1,4 +1,4 @@
-<div class="">
+<div class="pb-4 mb-5 border-b-2 border-slate-300 border-solid">
     <!-- Info post -->
     <div class="info-post">
         <div class="flex justify-between">
@@ -13,10 +13,10 @@
                     </div>
                 </div>
                 <div class="name-author">
-                    <span class="font-medium">tuan_dat</span>
+                    <span class="font-medium">{{post.author_name}}</span>
                 </div>
                 <div class="time-post ">
-                    <span>2d</span>
+                    <span style="color: rgb(115, 115, 115);">{{post.date}}d</span>
                 </div>
             </div>
             <div>
@@ -34,7 +34,7 @@
 
     <!-- file post -->
     <div class="file-post flex justify-center bg-black">
-        <img src="../../../../../../assets/images/243209118-352-k792277.jpg" alt="">
+        <img src={{post.file[0]}} alt="">
     </div>
     <!-- end -->
     <div>
@@ -91,17 +91,17 @@
 
         <!-- count like -->
         <div>
-            <span class="font-medium">4,321 likes</span>
+            <span class="font-medium">{{post.like}}</span>
         </div>
         <!-- end -->
 
         <!-- caption -->
         <div>
-            <span class="font-medium">tuan_dat </span>
-            <p>An early happy new year to you all</p>
+            <span class="font-medium">{{post.author_name}} </span>
+            <p>{{post.caption}}</p>
         </div>
         <div>
-            <span class="view-comment">View all 1,728 comments</span>
+            <span class="view-comment">View all {{post.comment}} comments</span>
         </div>
         <div class="w-full">
 
@@ -123,5 +123,5 @@
         </div>
         <!-- end -->
     </div>
-    <p>post works!</p>
+   
 </div>

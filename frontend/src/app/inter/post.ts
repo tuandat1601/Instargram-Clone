@@ -4,7 +4,7 @@ export interface Post {
     file:string[];
     like:number;
     comment:number;
-    date:Date
-
+    date:number,
+    author_name:string
 }
 
