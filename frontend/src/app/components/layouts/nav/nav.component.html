@@ -187,6 +187,7 @@
                 </a></li>
             <li [ngClass]="{align__justify__center:navbarStatus==='navbar-small'}"><button #notiname data-name="note" (click)="logData(notiname.getAttribute('data-name'))"
                     class="flex items-center lg:p-3 ">
+                  
                     <div>
                         <svg aria-label="Notifications"
                             [ngClass]="{displayblock:navtool!=='note',displaynone:navtool==='note'}"
@@ -272,3 +273,4 @@
 </div>
 </nav>
 <app-search  *ngIf="navtool ==='search'"></app-search>
+<app-notification  *ngIf="navtool ==='note'"></app-notification>

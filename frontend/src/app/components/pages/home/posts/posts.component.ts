@@ -37,7 +37,7 @@ export class PostsComponent {
       like:10000,
       comment:15,
       date:35,
-      author_name:"kotlin"
+      author_name:"kotlin77uu"
     },
 ]
  

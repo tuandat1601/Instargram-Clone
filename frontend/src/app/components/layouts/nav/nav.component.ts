@@ -25,6 +25,11 @@ export class NavComponent {
     if (!(event.target as HTMLElement).matches('button')) {
       this.sut.padding = '0px';
       this.clickMessage = '';
+    
+    }
+    if (!(event.target as HTMLElement).matches('nav')) {
+   
+    
     }
   }
   constructor(private router: Router) {

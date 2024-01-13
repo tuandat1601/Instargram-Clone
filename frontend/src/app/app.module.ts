@@ -7,7 +7,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NavComponent } from './components/layouts/nav/nav.component';
 import { ExploreComponent } from './components/pages/explore/explore.component';
 
-import { NotificationsComponent } from './components/pages/notifications/notifications.component';
+
 import { MessagesComponent } from './components/pages/messages/messages.component';
 import { CreateComponent } from './components/pages/create/create.component';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +17,8 @@ import { SearchComponent } from './components/layouts/search/search.component';
 
 import { SuggestedComponent } from './components/pages/home/suggested/suggested.component';
 import { PostComponent } from './components/pages/home/posts/post/post.component';
+import { NotificationComponent } from './components/layouts/notification/notification.component';
+import { CreatepostComponent } from './components/layouts/createpost/createpost.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { PostComponent } from './components/pages/home/posts/post/post.component
     NavComponent,
     ExploreComponent,
     SearchComponent,
-    NotificationsComponent,
+   
     MessagesComponent,
     CreateComponent,
     ReelsComponent,
     PostsComponent,
     SuggestedComponent,
-    PostComponent
+    PostComponent,
+    NotificationComponent,
+    CreatepostComponent
   ],
   imports: [
     BrowserModule,
