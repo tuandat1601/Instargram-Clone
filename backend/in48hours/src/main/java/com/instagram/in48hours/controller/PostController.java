@@ -2,9 +2,14 @@ package com.instagram.in48hours.controller;
 
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +24,7 @@ import com.instagram.in48hours.entities.FilePost;
 import com.instagram.in48hours.entities.Post;
 import com.instagram.in48hours.repository.PostRepository;
 import com.instagram.in48hours.repository.UserRepository;
+import com.instagram.in48hours.service.filePost.FilePostService;
 import com.instagram.in48hours.service.post.PostService;
 import com.instagram.in48hours.util.EntityConverter;
 import com.instagram.in48hours.util.Predicates;
@@ -29,6 +35,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.models.media.Content;
 import io.swagger.v3.oas.models.security.SecurityScheme.Type;
 
+
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,6 +45,7 @@ import java.util.function.Predicate;
 @RestController
 @RequestMapping("/api/v1/post")
 @Tag(name = "Posts")
+@CrossOrigin( origins = "*")
 public class PostController {
 	
 	@Autowired
@@ -48,6 +56,9 @@ public class PostController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	FilePostService filePostService;
  @GetMapping("/posts")
  public ResponseEntity<List<Post>> getListPost(){
 	 
@@ -76,5 +87,14 @@ public class PostController {
 	 
 
 	 return ResponseEntity.ok(tito);
+ }
+ @GetMapping("/files/{filename:.+}")
+
+ public ResponseEntity<?> loadFile(@PathVariable String filename){
+ 	
+ 	Resource resource= filePostService.loadFile(filename);
+ 	
+ 			 return ResponseEntity.ok()
+ 				        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"").contentType(MediaType.valueOf("image/jpg")).body(resource);
  }
 }

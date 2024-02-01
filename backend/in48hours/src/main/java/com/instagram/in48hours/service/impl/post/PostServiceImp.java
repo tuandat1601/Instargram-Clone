@@ -47,7 +47,7 @@ GenericService genericService;
 @Value("${fileUpload.rootPath}")
 private String rootPath;
 private Path root;
-private void init() {
+public void initFile() {
 	try {
 		root = Paths.get(rootPath);
 		System.out.println(root);
@@ -95,7 +95,7 @@ public <T> T partialUpdate(JpaRepository<T, Long> repository, Long id, Map<Strin
 @Override
 public boolean saveFilePost(Post post, MultipartFile[] files) {
 	try {
-		init();
+		initFile();
 		 Date currentDate = new Date();
 		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss"); 
 		 String currentDateTime = dateFormat.format(currentDate);
