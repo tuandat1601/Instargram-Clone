@@ -22,7 +22,7 @@ public class FilePostServiceImp implements FilePostService {
 		 try {
 			 try {
 					root = Paths.get(rootPath);
-					System.out.println(root);
+			
 					if(Files.notExists(root)) {
 						Files.createDirectories(root);
 					}

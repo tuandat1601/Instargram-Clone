@@ -95,6 +95,6 @@ public class PostController {
  	Resource resource= filePostService.loadFile(filename);
  	
  			 return ResponseEntity.ok()
- 				        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"").contentType(MediaType.valueOf("image/jpg")).body(resource);
+ 				        .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resource.getFilename() + "\"").contentType(MediaType.valueOf("image/jpeg")).body(resource);
  }
 }
